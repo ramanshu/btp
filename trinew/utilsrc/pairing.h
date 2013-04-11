@@ -1,0 +1,102 @@
+#include "transformation.h"
+#include <stdio.h>
+#include <stdlib.h>
+#include <utility>
+#include <string.h>
+#include "TriMesh.h"
+#include "XForm.h"
+#include "GLCamera.h"
+#include "ICP.h"
+#include "strutil.h"
+#include <GL/glut.h>
+#include <string>
+#include <cmath>
+#include <iostream>
+#include <time.h>
+typedef vector< Transformation* > Transformation_list;
+
+Transformation_list* transformation_list(TriMesh *mesh,float p,int mode)
+{
+//       srand(time(NULL));
+       int pnum=(int)1000000*p;
+       int count =0,total=0;
+       Transformation_list* pairs=new Transformation_list();
+/*       for(int i=0;i<(mesh->vertices.size()/2);i++)
+	       {
+	        	        Transformation *temp=new Transformation(mesh,i,i+507);
+						pairs->push_back(temp);	        	        
+	        	        temp=new Transformation(mesh,i+507,i);
+						pairs->push_back(temp);	        	        
+	       }
+	       */
+	       for(int i=0;i<mesh->vertices.size();i+= 1)
+       		for(int j = 0;j<mesh->vertices.size();j += 1)
+           	{	
+           		if(i == j) 
+           			continue;
+           		if(!(mesh->pruned[i]) && !(mesh->pruned[j]) )
+	        		total++;
+               		double curvature_ratio_ratio = fabs((mesh->curv1[i]*mesh->curv2[j])/(mesh->curv2[i]*mesh->curv1[j]));
+               		if(!(mesh->pruned[i]) && !(mesh->pruned[j]) && curvature_ratio_ratio<=1.05 && curvature_ratio_ratio>=.95) { 
+               			count++;
+	        	        Transformation *temp=new Transformation(mesh,i,j);
+	        	        //cout  << temp->s <<endl; 
+	        	        if(temp->s < 20 && temp->s > 0.05)
+	        	        pairs->push_back(temp);
+	        	       // cout <<count << " >> "<< (*(pairs->at(count-1))).s <<endl ;
+	        	        temp=new Transformation(mesh,j,i);
+	        	        //cout  << temp->s <<endl; 
+	        	        if(temp->s < 20 && temp->s > 0.05)
+	        	        pairs->push_back(temp);
+			}
+		}
+	cout <<"count =" << count <<" total= " <<total << endl;
+	return pairs;
+}
+void denormalize(Transformation_list* list,TriMesh *mesh)
+{
+	float diagonal = mesh->need_diagonal_length();
+	 for(Transformation_list::iterator it=list->begin();it!=list->end();it++)
+	 	{
+	 		(*it)->s = (*it)->s*180*diagonal;
+	 		(*it)->r[0] = (*it)->r[0]*10*diagonal*180/M_PI;
+	 		(*it)->r[1] = (*it)->r[1]*10*diagonal*180/M_PI;
+	 		(*it)->r[2] = (*it)->r[2]*10*diagonal*180/M_PI;
+	 		(*it)->t[0] = (*it)->t[0]*180*10;
+	 		(*it)->t[1] = (*it)->t[1]*180*10;
+	 		(*it)->t[2] = (*it)->t[2]*180*10;	
+	 	}
+}
+
+Transformation_list* normalize(Transformation_list* list,TriMesh *mesh)
+{
+	 Transformation_list *normalized = new Transformation_list();
+	 float diagonal = mesh->need_diagonal_length();
+	 for(Transformation_list::iterator it=list->begin();it!=list->end();it++)
+	 	{
+	 		Transformation *temp=new Transformation(0);
+			temp->points = new pair < int, int >((*it)->points->first, (*it)->points->first);
+			temp->s = (*it)->s*180;
+	 		temp->r[0] = (*it)->r[0]*10*180/M_PI;
+	 		temp->r[1] = (*it)->r[1]*10*180/M_PI;
+	 		temp->r[2] = (*it)->r[2]*10*180/M_PI;
+	 		temp->t[0] = (*it)->t[0]*180*10/diagonal;
+	 		temp->t[1] = (*it)->t[1]*180*10/diagonal;
+	 		temp->t[2] = (*it)->t[2]*180*10/diagonal;	
+	 		normalized -> push_back(temp);
+	 	}
+	return normalized;
+}
+
+void print_to_file(FILE *fd,Transformation_list *list)
+{
+  fprintf(fd,"%d %d\n",list->size(),7);
+  int count =0;
+  for(Transformation_list::iterator it=list->begin();it!=list->end();it++,count++)
+        {
+//    if(count%5==0)
+    fprintf(fd,"%f %f %f %f %f %f %f\n",(*it)->s,(*it)->r[0],(*it)->r[1],(*it)->r[2],(*it)->t[0],(*it)->t[1],(*it)->t[2]);    
+   //cout <<   ((*it).s) << " " <<  ((*it).r[0]) << " " <<  ((*it).r[1]) << " " <<  ((*it).r[2]) << " " <<  ((*it).t[0]) << " " <<  ((*it).t[1]) << " " <<  ((*it).t[2]) << "\n";     
+} 
+ printf("Finished writing to file\n");
+}

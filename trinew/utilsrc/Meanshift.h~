@@ -1,0 +1,143 @@
+#include "pairing.h"
+typedef vector < Transformation > Mode_list;
+
+
+
+class Meanshift
+{
+public:
+  Mode_list * mode_list;
+  Transformation_list *input;
+  double ibandwidth;
+  double tolerance;
+    Meanshift (Transformation_list * in, double x,double y)
+  {
+    input = in;
+    mode_list = new Mode_list ();
+
+    for (int i = 0; i < input->size (); i++)
+      {
+	mode_list->push_back (input->at (i));
+	mode_list->at(mode_list->size()-1).transList.push_back(i);
+     //   cout  << mode_list->at(mode_list->size()-1).points.size() << endl;
+      }
+    ibandwidth =  x;
+    tolerance = y;
+  }
+  double kernel (Transformation & a, Transformation & b)
+  {
+    //cout <<exp (ibandwidth * ((a - b).normSq ()))<<endl;
+    return exp (ibandwidth * ((a - b).normSq ()));
+  }
+  bool same (Transformation & a, Transformation & b)
+  {
+// if((a-b).norm() < tolerance)
+//    {
+// cout  << "here\n"; 
+//  (a-b).printTrans();
+    //cout << ((a-b).norm()) <<endl;}
+
+    return (a-b).norm() < tolerance;
+//    return true;
+  }
+  void find_modes ()
+  {
+    Mode_list *temp_modes = new Mode_list ();
+    double k_i_j, k_sum;
+    for (int i = 0; i < mode_list->size (); i++)
+      {
+	Transformation temp (0);
+	k_sum = 0;
+	for (int j = 0; j < input->size (); j++)
+	  {
+	    k_i_j = kernel (mode_list->at (i), input->at (j));
+	    temp += (input->at (j)) * k_i_j;
+	    k_sum += k_i_j;
+	  }
+	temp = temp * (1 / k_sum);
+	temp_modes->push_back (temp);
+      }
+    for (int i = 0; i < mode_list->size (); i++)
+    {
+    for (int j = 0; j < mode_list->at(i).points.size (); j++)
+     temp_modes->at(i).points.push_back(mode_list->at(i).points[j]);
+    }
+    mode_list->clear ();
+    mode_list = temp_modes;
+  }
+  void merge_modes ()
+  {
+    Mode_list *temp_modes = new Mode_list ();
+    vector < vector < int > >lists;
+    for (int i = 0; i < mode_list->size (); i++)
+      {
+	int count = 0;
+	for (int j = 0; j < temp_modes->size (); j++)
+	  {
+	    if (same (mode_list->at (i), temp_modes->at (j)))
+	      {
+         	lists[j].push_back (i);
+		count++;
+		break;
+	      }
+	  }
+	if (count == 0)
+	  {
+	    temp_modes->push_back (mode_list->at (i));
+	    lists.push_back (vector < int >());
+	    lists.at(lists.size()-1).push_back(i);
+	  }
+      }
+ /*   cout << "lists.size =" <<  lists.size() <<endl; 
+    for (int i = 0; i < lists.size (); i++)
+    {
+    	for (int j = 0; j < lists[i].size (); j++)
+        cout << lists[i][j] << " ";
+        cout <<endl;
+ 	}
+*/    for (int i = 0; i < temp_modes->size (); i++)
+      {
+	for (int j = 0; j < lists[i].size (); j++)
+	  {
+	    for (int k = 0; k < mode_list->at (lists[i][j]).points.size (); k++)
+	      temp_modes->at(i).points.push_back(mode_list->at(lists[i][j]).points.at(k));
+/*	    for (int k = 0; k < mode_list->at (lists[i][j]).transList.size (); k++)
+	      temp_modes->at(i).transList.push_back(mode_list->at(lists[i][j]).transList.at(k));*/
+	  }
+//    getchar();
+	 //   cout << "Point_size " <<mode_list->at (i).points.size () << "\n";
+
+      }
+    mode_list->clear ();
+    mode_list = temp_modes;
+  }
+
+
+  void mean_shift (int conv_min)
+  {
+
+    int numModes=input->size();
+    int same_count=0;
+    int iterations=0;
+    while (same_count< conv_min)
+      {
+	find_modes ();
+//	printf ("Iteration %d >", iterations);
+	merge_modes ();
+ 
+  // cout << "no of modes is " <<  mode_list->size()<< endl;
+     if(mode_list->size()==numModes)
+     {
+  	same_count++;
+     }
+     else
+     {
+	same_count=0;
+	numModes=mode_list->size();
+     }
+	iterations++;
+	}
+
+  }
+  
+};

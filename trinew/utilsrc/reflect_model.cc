@@ -1,0 +1,89 @@
+/*
+Szymon Rusinkiewicz
+Princeton University
+
+mesh_filter.cc
+Apply a variety of tranformations to a mesh
+*/
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <ctype.h>
+#include "TriMesh.h"
+#include "TriMesh_algo.h"
+#include "XForm.h"
+using namespace std;
+
+#ifndef M_PI
+# define M_PI 3.14159265358979323846
+#endif
+
+
+// Is this argument a floating-point number?
+static bool isanumber(const char *c)
+{
+	if (!c || !*c)
+		return false;
+	char *endptr;
+	strtod(c, &endptr);
+	return (endptr && *endptr == '\0');
+}
+
+
+// Is this argument an integer?
+static bool isanint(const char *c)
+{
+	if (!c || !*c)
+		return false;
+	char *endptr;
+	strtol(c, &endptr, 10);
+	return (endptr && *endptr == '\0');
+}
+
+
+// Transform the mesh by a matrix read from a file
+void apply_xform(TriMesh *mesh, const char *xffilename)
+{
+	xform xf;
+	if (!xf.read(xffilename))
+		fprintf(stderr, "Couldn't open %s\n", xffilename);
+	else
+		apply_xform(mesh, xf);
+}
+
+
+// Transform the mesh by inverse of a matrix read from a file
+void apply_ixform(TriMesh *mesh, const char *xffilename)
+{
+	xform xf;
+	if (!xf.read(xffilename)) {
+		fprintf(stderr, "Couldn't open %s\n", xffilename);
+	} else {
+		invert(xf);
+		apply_xform(mesh, xf);
+	}
+}
+
+
+// Clip mesh to the given bounding box file
+bool clip(TriMesh *mesh, const char *bboxfilename)
+{
+	box b;
+	if (!b.read(bboxfilename)) {
+		fprintf(stderr, "Couldn't read bounding box %s\n", bboxfilename);
+		return false;
+	}
+
+	clip(mesh, b);
+	return true;
+}
+void mesh_scale(TriMesh *themesh,float sx,float sy,float sz)
+{
+	bool have_tstrips = !themesh->tstrips.empty();
+	xform s = xform::scale(sx,sy,sz);
+			apply_xform(themesh, s);
+			if (have_tstrips && themesh->tstrips.empty())
+			themesh->need_tstrips();
+}
+
