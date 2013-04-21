@@ -1,0 +1,159 @@
+OPTION == 1
+9690
+Valid 4872 of 9690
+count =13142 total= 789102
+Finished writing to file
+Parameters Set
+done
+Find optimal K and L, K=1:1:40, Lmax=40, k=100, Err=0.05
+ find valid pairs........................................done
+ select best pair
+  K=13 L=40 time: 0.07
+  K=12 L=25 time: 0.06
+  K=11 L=21 time: 0.06
+  K=10 L=16 time: 0.06
+  K=9 L=15 time: 0.07
+  K=8 L=11 time: 0.07
+  K=7 L=9 time: 0.07
+  K=6 L=7 time: 0.08
+  K=5 L=6 time: 0.09
+  K=4 L=4 time: 0.1
+  K=3 L=3 time: 0.12
+  K=2 L=3 time: 0.13
+  K=1 L=2 time: 0.12
+done
+Running FAMS with K=12 L=25
+ Run pilot adaptive...load bandwidths...done.
+ Start MS iterations...........done.
+ Join Modes with adaptive h/2, min pt=40, jump=1
+            pass 1.........done
+            pass 2..........done
+Save convergence points in out_100_monkeyData.txt ...done
+s=179.866 r0=-1798.954 r0=-176.336 r0=1798.210 t0=-234.753 t0=-0.372 t0=50.209
+s=179.629 r0=-0.847 r0=-443.725 r0=0.578 t0=-129.080 t0=0.340 t0=124.298
+s=47.596 r0=-1310.482 r0=158.969 r0=50.446 t0=-64.014 t0=140.209 t0=14.351
+s=177.254 r0=1792.985 r0=-332.115 r0=-1791.830 t0=-334.964 t0=-2.747 t0=100.789
+s=97.465 r0=241.608 r0=-62.351 r0=1418.499 t0=-160.188 t0=175.829 t0=-14.383
+s=179.391 r0=0.103 r0=443.693 r0=-0.847 t0=-23.407 t0=-0.609 t0=-185.597
+s=177.729 r0=-1793.730 r0=563.852 r0=-1795.392 t0=-291.033 t0=-0.135 t0=-223.117
+s=63.269 r0=561.714 r0=-280.109 r0=-1277.474 t0=-224.067 t0=77.042 t0=13.401
+s=78.942 r0=987.969 r0=30.261 r0=-240.452 t0=-238.552 t0=80.842 t0=-30.056
+s=177.966 r0=1798.447 r0=550.316 r0=1798.447 t0=-110.557 t0=0.815 t0=-144.515
+s=179.866 r0=-0.135 r0=23.612 r0=0.103 t0=-346.600 t0=-0.372 t0=0.340
+s=154.694 r0=1281.955 r0=104.351 r0=1623.195 t0=-196.996 t0=60.657 t0=-61.639
+s=179.629 r0=-0.135 r0=-7.021 r0=-0.609 t0=282.927 t0=-0.372 t0=3.427
+s=175.354 r0=-1793.492 r0=296.700 r0=-1792.779 t0=-623.250 t0=-1.560 t0=-308.131
+s=111.000 r0=-598.316 r0=130.235 r0=-1477.897 t0=-324.278 t0=81.317 t0=39.997
+s=179.154 r0=1799.397 r0=260.605 r0=1799.160 t0=-694.016 t0=0.103 t0=-288.183
+s=100.314 r0=-19.607 r0=-361.561 r0=-307.418 t0=-471.034 t0=-20.082 t0=210.262
+s=179.629 r0=0.578 r0=452.004 r0=-0.372 t0=150.895 t0=-0.135 t0=-514.965
+s=179.866 r0=-0.135 r0=5.089 r0=-0.372 t0=16.251 t0=-0.372 t0=-393.619
+s=180.103 r0=1799.634 r0=-430.189 r0=1799.634 t0=-760.032 t0=0.103 t0=124.298
+s=171.554 r0=158.494 r0=-3.222 r0=381.001 t0=96.752 t0=26.699 t0=-360.373
+s=179.629 r0=-0.135 r0=-0.847 r0=-0.135 t0=-21.269 t0=-0.135 t0=393.112
+s=1050.661 r0=1799.634 r0=-170.399 r0=1799.634 t0=-735.573 t0=-610.427 t0=45.697
+s=179.866 r0=0.340 r0=450.580 r0=-0.609 t0=-2.747 t0=-0.372 t0=-329.265
+s=180.816 r0=-0.609 r0=450.817 r0=-0.847 t0=-212.668 t0=-1.084 t0=-496.205
+s=178.679 r0=1798.922 r0=577.387 r0=1798.210 t0=-559.609 t0=1.053 t0=-567.445
+s=179.391 r0=1798.922 r0=-472.221 r0=1798.922 t0=-238.077 t0=0.815 t0=-27.918
+s=179.629 r0=-0.135 r0=0.340 r0=-0.372 t0=-395.993 t0=-0.135 t0=-394.331
+s=178.441 r0=1799.397 r0=6.989 r0=1799.397 t0=-165.175 t0=0.815 t0=-320.954
+s=1044.723 r0=-0.372 r0=-466.284 r0=-1.322 t0=-507.366 t0=-606.153 t0=-76.599
+s=179.866 r0=-0.372 r0=-1.560 r0=-0.372 t0=395.011 t0=-0.372 t0=394.299
+s=205.275 r0=-865.942 r0=599.709 r0=-976.602 t0=-101.296 t0=-90.372 t0=-283.909
+s=124.536 r0=93.428 r0=-361.323 r0=237.333 t0=-240.927 t0=101.502 t0=125.249
+s=179.391 r0=-1.084 r0=-409.529 r0=1.290 t0=35.248 t0=-0.372 t0=-399.793
+s=1906.020 r0=1415.886 r0=-19.607 r0=-309.555 t0=90.815 t0=1220.212 t0=-493.355
+s=196.726 r0=-464.622 r0=333.982 r0=12.451 t0=112.662 t0=12.689 t0=-68.288
+s=215.486 r0=70.156 r0=269.629 r0=-347.075 t0=76.805 t0=-242.115 t0=-191.059
+not reflect
+0 3 382
+not reflect
+1 3 106
+2 0 0
+3 0 0
+4 0 0
+not reflect
+5 1 0
+6 0 0
+7 0 0
+8 0 0
+not reflect
+9 1 398
+not reflect
+10 1 0
+11 0 0
+12 1 0
+13 0 0
+14 0 0
+15 0 0
+16 0 0
+not reflect
+not reflect
+not reflect
+17 23 0
+not reflect
+not reflect
+not reflect
+not reflect
+not reflect
+not reflect
+not reflect
+not reflect
+not reflect
+not reflect
+18 51 183
+19 0 0
+20 0 0
+not reflect
+not reflect
+not reflect
+not reflect
+not reflect
+not reflect
+not reflect
+not reflect
+not reflect
+not reflect
+not reflect
+not reflect
+not reflect
+not reflect
+21 51 189
+22 0 0
+not reflect
+not reflect
+not reflect
+not reflect
+23 17 0
+not reflect
+not reflect
+not reflect
+24 13 0
+not reflect
+25 1 0
+26 0 0
+not reflect
+not reflect
+not reflect
+not reflect
+not reflect
+not reflect
+not reflect
+not reflect
+not reflect
+27 20 0
+not reflect
+28 8 399
+29 0 0
+30 20 0
+31 0 0
+32 0 0
+not reflect
+33 11 0
+34 0 0
+35 0 0
+36 0 0
+6
+PTS _> size = 6
+                        24.1 msec.                        10.0 msec.                        8.7 msec.                        22.7 msec.                        12.0 msec.                        17.8 msec.                        9.1 msec.                        6.7 msec.                        6.5 msec.                        6.6 msec.                        6.6 msec.                        6.7 msec.                        6.6 msec.                        6.5 msec.                        6.6 msec.                        4.0 msec.                        4.0 msec.                        4.0 msec.                        6.7 msec.                        6.6 msec.                        6.6 msec.                        6.6 msec.                        6.6 msec.                        6.6 msec.                        6.7 msec.                        6.5 msec.                        6.6 msec.                        6.7 msec.                        6.5 msec.                        6.6 msec.                        6.6 msec.                        6.6 msec.                        6.6 msec.                        6.6 msec.                        6.9 msec.                        5.3 msec.                        6.6 msec.                        6.7 msec.                        6.6 msec.                        6.5 msec.                        6.7 msec.                        6.5 msec.                        6.6 msec.                        6.6 msec.                        6.6 msec.                        6.7 msec.                        6.7 msec.                        6.4 msec.                        6.6 msec.                        6.6 msec.                        6.6 msec.                        6.6 msec.                        6.7 msec.                        6.5 msec.                        6.6 msec.                        6.6 msec.                        6.6 msec.                        6.6 msec.                        6.6 msec.                        6.5 msec.                        6.6 msec.                        6.7 msec.                        4.1 msec.                        4.1 msec.                        8.1 msec.                        6.7 msec.                        6.5 msec.                        6.7 msec.                        6.4 msec.                        6.6 msec.                        6.6 msec.                        6.6 msec.                        6.5 msec.                        6.6 msec.                        6.7 msec.                        6.5 msec.                        4.2 msec.                        5.5 msec.                        8.5 msec.                        6.5 msec.                        6.6 msec.                        6.7 msec.                        6.5 msec.                        6.6 msec.                        6.6 msec.                        6.7 msec.                        6.4 msec.                        6.6 msec.                        6.6 msec.                        6.6 msec.                        6.6 msec.                        6.6 msec.                        6.6 msec.                        6.6 msec.                        6.6 msec.                        6.6 msec.                        6.7 msec.                        6.4 msec.                        6.6 msec.                        6.6 msec.                        6.6 msec.                        6.6 msec.                        6.6 msec.                        6.7 msec.                        6.6 msec.                        6.6 msec.                        6.6 msec.                        6.6 msec.                        6.6 msec.                        6.6 msec.                        6.6 msec.                        6.6 msec.                        6.6 msec.                        6.6 msec.                        6.6 msec.                        6.6 msec.                        6.5 msec.                        6.6 msec.                        6.6 msec.                        6.6 msec.                        6.6 msec.                        6.6 msec.                        6.6 msec.                        6.6 msec.                        4.0 msec.                        13.4 msec.                        8.9 msec.                        6.4 msec.                        14.8 msec.                        18.3 msec.                        16.8 msec.                        16.6 msec.                        16.7 msec.                        14.9 msec.                        16.6 msec.                        18.3 msec.                        15.0 msec.                        16.7 msec.                        18.3 msec.                        16.7 msec.                        16.7 msec.                        16.5 msec.                        16.8 msec.                        16.6 msec.                        14.9 msec.                        16.9 msec.                        16.8 msec.                        17.9 msec.                        15.0 msec.                        17.0 msec.                        16.7 msec.                        7.0 msec.                        4.1 msec.                        4.0 msec.                        6.6 msec.                        6.6 msec.                        6.6 msec.                        6.6 msec.                        4.0 msec.                        13.8 msec.                        8.6 msec.                        6.7 msec.                        6.4 msec.                        6.7 msec.                        6.5 msec.                        6.6 msec.                        6.6 msec.                        6.6 msec.                        6.6 msec.                        6.6 msec.                        6.6 msec.                        6.6 msec.                        6.7 msec.                        6.5 msec.                        6.6 msec.                        6.6 msec.                        6.6 msec.                        6.6 msec.                        6.6 msec.                        4.0 msec.                        6.6 msec.                        8.8 msec.                        6.6 msec.                        6.5 msec.                        6.7 msec.                        6.5 msec.                        6.7 msec.                        6.5 msec.                        6.6 msec.                        6.6 msec.                        6.7 msec.                        6.5 msec.                        4.0 msec.                        4.0 msec.                        7.7 msec.                        6.5 msec.                        6.6 msec.                        6.6 msec.                        6.6 msec.                        6.6 msec.                        6.6 msec.                        6.6 msec.                        6.6 msec.                        4.0 msec.                        6.5 msec.                        8.7 msec.                        6.6 msec.                        6.6 msec.                        6.6 msec.                        6.6 msec.                        6.6 msec.                        6.6 msec.                        6.6 msec.                        6.6 msec.                        6.6 msec.                        4.1 msec.                        4.0 msec.                        4.1 msec.                        7.4 msec.                        8.8 msec.                        6.6 msec.                        6.5 msec.                        6.6 msec.                        6.6 msec.                        6.6 msec.                        6.6 msec.                        6.5 msec.                        4.1 msec.                        4.1 msec.                        8.2 msec.                        6.6 msec.                        6.7 msec.                        6.6 msec.                        6.5 msec.                        6.6 msec.                        6.5 msec.                        6.6 msec.                        6.5 msec.                        6.7 msec.                        6.5 msec.                        6.6 msec.                        6.6 msec.                        4.1 msec.                        4.1 msec.                        18.1 msec.                        9.1 msec.                        6.6 msec.                        4.1 msec.                        4.1 msec.                        9.0 msec.                        8.7 msec.                        6.6 msec.                        6.6 msec.                        6.6 msec.                        6.6 msec.                        6.6 msec.                        4.1 msec.                        4.1 msec.                        18.1 msec.                        9.2 msec.                        6.6 msec.                        6.5 msec.                        6.6 msec.                        6.6 msec.                        6.7 msec.                        6.5 msec.                        6.6 msec.                        6.6 msec.                        6.6 msec.                        6.6 msec.                        6.6 msec.                        6.6 msec.                        6.6 msec.                        6.6 msec.                        6.7 msec.                        6.5 msec.                        4.1 msec.                        4.0 msec.                        8.2 msec.                        6.4 msec.                        6.6 msec.                        6.6 msec.                        6.7 msec.                        6.4 msec.                        6.6 msec.                        6.6 msec.                        6.6 msec.                        6.6 msec.                        6.6 msec.                        6.5 msec.                        6.6 msec.                        6.6 msec.                        6.6 msec.                        6.6 msec.                        6.7 msec.                        6.4 msec.                        6.6 msec.                        6.6 msec.                        6.6 msec.                        6.6 msec.                        6.6 msec.                        6.6 msec.                        6.7 msec.                        6.6 msec.                        6.6 msec.                        6.5 msec.                        6.7 msec.                        5.5 msec.                        6.8 msec.                        7.3 msec.                        6.6 msec.                        6.6 msec.                        6.6 msec.                        6.5 msec.                        6.5 msec.                        4.1 msec.                        4.0 msec.                        9.1 msec.                        8.8 msec.                        6.6 msec.                        6.6 msec.                        6.6 msec.                        6.6 msec.                        6.6 msec.                        6.6 msec.                        4.1 msec.                        4.1 msec.                        7.9 msec.                        6.4 msec.                        6.6 msec.                        6.6 msec.                        6.6 msec.                        6.6 msec.                        6.7 msec.                        6.6 msec.                        6.6 msec.                        6.7 msec.                        6.4 msec.                        6.6 msec.                        6.6 msec.                        6.7 msec.                        6.6 msec.                        6.6 msec.                        6.6 msec.                        6.6 msec.                        6.6 msec.                        4.1 msec.                        13.3 msec.                        8.7 msec.                        4.1 msec.                        14.1 msec.                        8.7 msec.                        6.6 msec.                        6.7 msec.                        6.5 msec.                        4.1 msec.                        4.2 msec.                        6.9 msec.                        8.7 msec.                        6.5 msec.                        6.6 msec.                        6.6 msec.                        4.6 msec.                        4.4 msec.                        11.5 msec.                        8.7 msec.                        6.6 msec.                        6.6 msec.                        6.7 msec.                        5.6 msec.                        6.5 msec.                        7.5 msec.                        6.8 msec.                        20.6 msec.                        9.1 msec.                        6.8 msec.                        20.5 msec.                        8.9 msec.                        6.7 msec.                        20.6 msec.                        9.1 msec.                        6.7 msec.                        20.5 msec.                        9.2 msec.                        6.8 msec.                        20.5 msec.                        9.1 msec.                        6.8 msec.                        20.6 msec.                        9.2 msec.                        6.8 msec.                        20.5 msec.                        9.1 msec.                        6.8 msec.                        20.6 msec.                        9.1 msec.                        6.8 msec.                        4.4 msec.                        4.3 msec.                        4.7 msec.                        8.5 msec.                        6.7 msec.                        4.3 msec.                        4.3 msec.                        4.7 msec.                        8.0 msec.                        6.6 msec.                        20.6 msec.                        8.9 msec.                        4.2 msec.                        4.2 msec.                        4.2 msec.                        8.0 msec.                        4.2 msec.                        15.6 msec.                        8.8 msec.                        4.2 msec.                        4.2 msec.                        4.2 msec.                        4.2 msec.                        4.1 msec.                        7.6 msec.                        8.7 msec.                        6.6 msec.                        6.5 msec.                        6.7 msec.                        6.5 msec.                        6.6 msec.                        6.6 msec.                        6.6 msec.                        6.6 msec.                        6.6 msec.                        6.8 msec.                        6.3 msec.                        5.8 msec.                        7.4 msec.                        6.5 msec.                        6.6 msec.                        6.8 msec.                        6.4 msec.                        6.5 msec.                        4.0 msec.                        4.1 msec.                        4.4 msec.                        6.6 msec.                        6.6 msec.                        6.7 msec.                        6.6 msec.                        6.6 msec.                        6.6 msec.                        6.6 msec.                        6.6 msec.                        6.6 msec.                        6.6 msec.                        6.7 msec.                        6.5 msec.                        6.6 msec.                        6.5 msec.                        4.1 msec.                        4.2 msec.                        4.2 msec.                        11.4 msec.                        8.7 msec.                        6.5 msec.                        6.6 msec.                        6.6 msec.                        6.6 msec.                        6.6 msec.                        6.6 msec.                        6.6 msec.                        6.6 msec.                        6.6 msec.                        6.5 msec.                        6.6 msec.                        6.6 msec.                        6.6 msec.                        6.5 msec.                        6.6 msec.                        6.7 msec.                        6.5 msec.                        6.6 msec.                        6.6 msec.                        6.6 msec.                        6.7 msec.                        6.5 msec.                        6.6 msec.                        6.7 msec.                        6.4 msec.                        6.6 msec.                        6.6 msec.                        4.1 msec.                        4.2 msec.                        8.2 msec.                        6.6 msec.                        6.5 msec.                        6.7 msec.                        6.5 msec.                        6.6 msec.                        6.6 msec.                        6.6 msec.                        6.7 msec.                        6.7 msec.                        6.4 msec.                        6.5 msec.                        6.6 msec.                        6.4 msec.                        6.6 msec.                        6.6 msec.                        6.6 msec.                        6.5 msec.                        6.6 msec.                        6.6 msec.                        6.6 msec.                        6.6 msec.                        6.7 msec.                        6.5 msec.                        6.6 msec.                        6.6 msec.                        6.6 msec.                        6.6 msec.                        6.8 msec.                        6.4 msec.                        6.6 msec.                        6.6 msec.                        6.6 msec.                        4.1 msec.                        4.2 msec.                        7.3 msec.                        6.5 msec.                        6.6 msec.                        6.6 msec.                        6.7 msec.                        6.6 msec.                        6.6 msec.                        6.5 msec.                        6.6 msec.                        6.6 msec.                        6.7 msec.                        6.4 msec.                        6.5 msec.                        6.8 msec.                        6.6 msec.                        6.4 msec.                        6.6 msec.                        14.8 msec.                        16.7 msec.                        16.7 msec.                        16.7 msec.                        16.9 msec.                        16.5 msec.                        16.6 msec.                        16.6 msec.                        18.3 msec.                        16.6 msec.                        16.9 msec.                        16.9 msec.                        7.1 msec.                        8.4 msec.                        6.6 msec.                        6.6 msec.                        6.6 msec.                        5.6 msec.                        6.6 msec.                        7.4 msec.                        6.6 msec.                        6.7 msec.                        6.4 msec.                        6.6 msec.                        6.6 msec.                        6.6 msec.                        4.0 msec.                        4.0 msec.                        8.9 msec.                        9.2 msec.                        6.5 msec.                        6.6 msec.                        6.7 msec.                        6.7 msec.                        6.5 msec.                        6.5 msec.                        6.6 msec.                        6.6 msec.                        6.6 msec.                        6.7 msec.                        6.4 msec.                        6.6 msec.                        6.6 msec.                        6.6 msec.                        6.6 msec.                        6.6 msec.                        6.7 msec.                        6.5 msec.                        4.1 msec.                        4.3 msec.                        7.8 msec.                        6.4 msec.                        6.6 msec.                        6.4 msec.                        6.7 msec.                        6.9 msec.                        6.1 msec.                        6.6 msec.                        6.5 msec.                        6.7 msec.                        6.6 msec.                        6.6 msec.                        6.6 msec.                        6.6 msec.                        6.6 msec.                        6.6 msec.                        6.6 msec.                        6.6 msec.                        6.6 msec.                        6.6 msec.                        6.6 msec.                        6.5 msec.                        6.6 msec.                        6.6 msec.                        6.6 msec.                        6.5 msec.                        6.6 msec.                        6.6 msec.                        6.6 msec.                        6.6 msec.                        6.6 msec.                        6.6 msec.                        6.6 msec.                        6.6 msec.                        4.5 msec.                        4.3 msec.                        4.3 msec.                        4.4 msec.                        4.3 msec.                        4.2 msec.                        4.5 msec.

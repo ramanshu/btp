@@ -29,7 +29,7 @@ Transformation_list* transformation_list(TriMesh *mesh,float p,int mode)
 						pairs->push_back(temp);	        	        
 	       }
 	       */
-	       for(int i=0;i<mesh->vertices.size();i+= 1)
+	       for(int i=0;i<mesh->vertices.size()/2;i+= 15)
        		for(int j = 0;j<mesh->vertices.size();j += 1)
            	{	
            		if(i == j) 
