@@ -155,15 +155,15 @@ void draw_clusters(const TriMesh *themesh)
   //  glClear( GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT );
 
     glBegin( GL_POINTS );
-        glColor3f( 1.0f, 0.0, 0.0f );
-    for ( int i = 0; i < themesh->vertices.size(); ++i )
+     for ( int i = 0; i < themesh->vertices.size(); ++i )
     {
-    if(themesh->onCluster[i]==1 && check_firsts)	glVertex3f( themesh->vertices[i][0],themesh->vertices[i][1],themesh->vertices[i][2] );
-    }
-        glColor3f( 0.0, 0.0f,1.0f );
-    for ( int i = 0; i < themesh->vertices.size(); ++i )
-    {
-    if(themesh->onCluster[i]==-1 && check_seconds)    	glVertex3f( themesh->vertices[i][0],themesh->vertices[i][1],themesh->vertices[i][2] );
+    if(themesh->onCluster[i]==1 && check_firsts){glColor3f( 1.0f, 0.0, 0.0f );	glVertex3f( themesh->vertices[i][0],themesh->vertices[i][1],themesh->vertices[i][2] );}
+    
+    else if(themesh->onCluster[i]==-1 && check_seconds){ glColor3f( 0.0, 0.0f,1.0f );   	glVertex3f( themesh->vertices[i][0],themesh->vertices[i][1],themesh->vertices[i][2] );
+    
+     }
+    else{ glColor3f( 0.0f, 1.0, 0.0f );
+    glVertex3f( themesh->vertices[i][0],themesh->vertices[i][1],themesh->vertices[i][2] );
     }
    
    glEnd();
@@ -780,7 +780,8 @@ int main(int argc, char *argv[])
 		(*it)->printTrans();
    	}   	
 	vector< vector<pair<int,int> >* >* pts = growCLuster_ICP(list,normalized, modes_list, mesh);
-	firsts.resize(pts->size());
+	cout << "PTS _> size = " << pts->size() << endl;
+		firsts.resize(pts->size());
     seconds.resize(pts->size());
     int i = 0;
     for (vector< vector<pair<int,int> >* >::iterator it=pts->begin();it!=pts->end();it++) {

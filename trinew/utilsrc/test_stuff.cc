@@ -155,17 +155,17 @@ void draw_clusters(const TriMesh *themesh)
   //  glClear( GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT );
 
     glBegin( GL_POINTS );
-        glColor3f( 1.0f, 0.0, 0.0f );
-    for ( int i = 0; i < themesh->vertices.size(); ++i )
+     for ( int i = 0; i < themesh->vertices.size(); ++i )
     {
-    if(themesh->onCluster[i]==1 && check_firsts)	glVertex3f( themesh->vertices[i][0],themesh->vertices[i][1],themesh->vertices[i][2] );
+    if(themesh->onCluster[i]==1 && check_firsts){glColor3f( 1.0f, 0.0, 0.0f );	glVertex3f( themesh->vertices[i][0],themesh->vertices[i][1],themesh->vertices[i][2] );}
+    
+    else if(themesh->onCluster[i]==-1 && check_seconds){ glColor3f( 0.0, 0.0f,1.0f );   	glVertex3f( themesh->vertices[i][0],themesh->vertices[i][1],themesh->vertices[i][2] );
+    
+     }
+    else{ glColor3f( 0.0f, 1.0, 0.0f );
+    glVertex3f( themesh->vertices[i][0],themesh->vertices[i][1],themesh->vertices[i][2] );
     }
-        glColor3f( 0.0, 0.0f,1.0f );
-    for ( int i = 0; i < themesh->vertices.size(); ++i )
-    {
-    if(themesh->onCluster[i]==-1 && check_seconds)    	glVertex3f( themesh->vertices[i][0],themesh->vertices[i][1],themesh->vertices[i][2] );
-    }
-   
+   }
    glEnd();
  if(check_draw_matchings && currentCluster >=0 && currentCluster<firsts.size()) 
 {  
